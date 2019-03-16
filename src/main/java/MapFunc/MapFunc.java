@@ -1,6 +1,7 @@
 package MapFunc;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.function.Function;
 
 /**
@@ -9,4 +10,22 @@ import java.util.function.Function;
  */
 public class MapFunc {
 
-}
+
+
+   // public static <T, R> T[] map(Function<T, R> function, T[] array){
+
+        public static <T, R> ArrayList map(ArrayList<T> arrayList, Function<T,R> function) {
+            ArrayList<R> returnArrayList = new ArrayList<R>();
+            for (int i = 0; i <arrayList.size() ; i++) {
+                returnArrayList.add((R)function.apply(arrayList.get(i)));
+            }
+            return returnArrayList;
+        }
+
+//        return (T[]) Arrays.stream(array)
+//                .map(function)
+//                .toArray(Object[]::new);
+
+    }
+
+
